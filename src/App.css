@@ -1,0 +1,27 @@
+.List{
+  
+  padding: auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  background-color: aqua;
+  padding-left: 4rem;
+}
+.drawer{
+
+  z-index: 5;
+  width: 30%;
+  margin-top:1rem ;
+  right: 0;
+  top: 0;
+  height: stretch;
+}
+
+.close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 100;
+  width: 2em;
+padding: 0.8em;
+cursor: pointer;
+}
