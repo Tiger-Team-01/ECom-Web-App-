@@ -1,36 +1,37 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import NavBar from "./components/NavBar";
 import ProductList from "./components/ProductList";
-import { Route } from "react-router-dom";
-import { GetProduct } from "./actions";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/Cart";
-import { useState } from "react";
+import Payments from "./components/Payments";
+import { Route } from "react-router-dom";
+import { GetProduct } from "./actions";
 
 function App() {
-
+  const CartItems = useSelector(state => state.CartItems)
   const Products = useSelector(state => state.Product)
   const [drawer, setdrawer] = useState(false)
 
   const dispatch = useDispatch();
 
-  useEffect(() => 
-     
-    dispatch(GetProduct(50))
-  
+  useEffect(() =>
+
+    dispatch(GetProduct(20))
+
     , [dispatch]);
 
 
   return (
     <div className="App">
-
-      <NavBar setDrawer={setdrawer} />
-      <Cart drawer={drawer} setdrawer={setdrawer} />
-      <Route path="/:id"><ProductDetails setDrawer={setdrawer}/></Route>
+      <>
+        <NavBar setDrawer={setdrawer} />
+        <Cart drawer={drawer} setdrawer={setdrawer} />
+      </>
       <Route path="/" exact>
+
         {
           Products.length > 0 ?
             <ProductList />
@@ -40,6 +41,10 @@ function App() {
             </div>
         }
       </Route>
+
+      <Route path="/details/:id" ><ProductDetails setDrawer={setdrawer} /></Route>
+      <Route path="/payment" exact ><Payments cartItems={CartItems} /></Route>
+
     </div>
   );
 }

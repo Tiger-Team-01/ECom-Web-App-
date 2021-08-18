@@ -10,7 +10,7 @@ const dispatch = useDispatch();
     <div className="List">
       {products.map((item, index) => (
         <Link key={index}
-          to={"/" + parseInt(index+1)}
+          to={"/details/" + parseInt(index+1)}
           style={{ color: "inherit", textDecoration: "none" }}
         >
           <div

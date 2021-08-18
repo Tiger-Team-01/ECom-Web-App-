@@ -5,17 +5,21 @@
   grid-template-columns: repeat(3,1fr);
   background-color: aqua;
   padding-left: 4rem;
+  position: relative;
+  top:4rem;
 }
-.drawer{
+.productdetails{
+  position: relative;
+  top:4rem;
 
-  z-index: 5;
-  width: 30%;
-  margin-top:1rem ;
-  right: 0;
-  top: 0;
-  height: stretch;
 }
+.payment{
+  height: 100rem;
+  width: 100%;
+  position: relative;
+  top:4rem;
 
+}
 .close{
   position: absolute;
   top: 0;
@@ -24,4 +28,9 @@
   width: 2em;
 padding: 0.8em;
 cursor: pointer;
+}
+
+.navbar {
+  z-index: 1;
+  height: 4rem;
 }

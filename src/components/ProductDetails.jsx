@@ -10,7 +10,7 @@ function ProductDetails({ setDrawer }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="container d-flex justify-content-center">
+    <div className="container d-flex justify-content-center productdetails ">
       <div
         className="card border border-2 p-3 m-2 overflow-hidden item"
         style={{ width: "25rem", height: "stretch" }}

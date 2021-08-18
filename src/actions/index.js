@@ -1,7 +1,8 @@
 const GetProduct = (qty) => {
     return (dispatch) => {
-        fetch(`https://fakestoreapi.com/products?limit=${qty}`)
-            .then(res => res.json())
+        fetch(
+            `https://fakestoreapi.com/products?limit=${qty}`
+        ).then(res => res.json())
             .then(data => {
                 dispatch({
                     type: "GET_PRODUCTS",
@@ -27,10 +28,22 @@ const GetProductDetails = (id) => {
 }
 
 const AddtoCart = (item) => {
-    return{
-        type:"ADDTO_CART",
-        payload:item,
+    return {
+        type: "ADDTO_CART",
+        payload: item,
     }
 }
 
-export { GetProductDetails, GetProduct ,AddtoCart}
+const RemovefromCart = (id) => {
+    return {
+        type: "REMOVEFROM_CART",
+        payload: id,
+    }
+}
+
+const ClearCart=()=>{
+    return{
+        type:"CLEAR_CART"
+    }
+}
+export { GetProductDetails, GetProduct, AddtoCart, RemovefromCart,ClearCart }
