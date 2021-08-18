@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { AddtoCart } from "../actions";
+import { Link } from "react-router-dom";
 
 function ProductDetails({ setDrawer }) {
   const item = useSelector((state) => state.Details);
@@ -11,6 +12,7 @@ function ProductDetails({ setDrawer }) {
 
   return (
     <div className="container d-flex justify-content-center productdetails ">
+      <Link to="/"><button className="close border border-0 bg-transparent" >back</button></Link>
       <div
         className="card border border-2 p-3 m-2 overflow-hidden item"
         style={{ width: "25rem", height: "stretch" }}
