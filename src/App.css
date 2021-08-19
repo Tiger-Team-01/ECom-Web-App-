@@ -28,7 +28,7 @@ cursor: pointer;
 }
 
 .search{
-  background-color: burlywood;
+
   top: 4rem;
   left:38%;
   padding: 10px;
@@ -36,16 +36,18 @@ cursor: pointer;
   width: 30rem;
   white-space: nowrap;
   overflow: auto;
+  background-color: burlywood;
 }
 .hide{
-  display: none;
+  
+  visibility: hidden;
 }
 .navbar {
   z-index: 1;
   height: 4rem;
 }
 .searchcard{
-  min-height: 5rem;
+  min-height: 5rem;  
 }
 .item{
  height: auto;

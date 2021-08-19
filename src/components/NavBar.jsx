@@ -18,7 +18,8 @@ function NavBar({ setDrawer }) {
         className={
           search
             ? "search position-fixed p-5 d-flex flex-column-reverse "
-            : "search position-fixed p-5  d-flex flex-column-reverse hide"
+            :
+             "search position-fixed p-5  d-flex flex-column-reverse hide"
         }
       >
         {
@@ -27,8 +28,10 @@ function NavBar({ setDrawer }) {
           <div 
           className="card text-left border border-2 p-3 m-2 overflow-hidden searchcard"
           id="result"
-        >{sResults}
-          {/* <div className="card-title">{itm}</div> */}
+          >
+          <div className="card-title">
+          {sResults}
+            </div>
         </div>
         // )
         // :null
@@ -41,7 +44,7 @@ function NavBar({ setDrawer }) {
         <input
           placeholder="Search "
           className="p-2"
-          onFocus={() => setsearch(true)}
+          onClick={()=>setsearch(true)}
           onChange={(e) => {
             searchItems.forEach((Sitems) => {
               if (Sitems.toLowerCase().includes(e.target.value.toLowerCase())) {
