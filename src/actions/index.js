@@ -1,7 +1,8 @@
 const GetProduct = () => {
     return (dispatch) => {
         fetch(
-            `https://v1.nocodeapi.com/amzon/airtable/qGouPJqjfPfAVYrw?tableName=products`
+            
+           `https://v1.nocodeapi.com/viren76/airtable/qdxTfLGKKKPvFBkB?tableName=products`
         ).then(res => res.json())
             .then(data => {
                 dispatch({
@@ -15,7 +16,7 @@ const GetProduct = () => {
 const GetProductDetails = (id) => {
 
     return (dispatch) => {
-        fetch(`https://v1.nocodeapi.com/amzon/airtable/qGouPJqjfPfAVYrw?tableName=products&id=${id}`)
+        fetch(`https://v1.nocodeapi.com/viren76/airtable/qdxTfLGKKKPvFBkB?tableName=products&id=${id}`)
             .then(res => res.json())
             .then(datas => {
                 dispatch({

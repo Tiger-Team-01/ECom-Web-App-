@@ -26,6 +26,7 @@ function App() {
 
   return (
     <div className="App">
+     {console.log(Products)}
       <>
         <NavBar setDrawer={setdrawer} />
         <Cart drawer={drawer} setdrawer={setdrawer} />

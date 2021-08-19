@@ -4,10 +4,9 @@
   grid-template-columns: repeat(3,1fr);
   background-color: aqua;
   padding-left: 4rem;
-  position: relative;
-  top:4rem;
+ 
 }
-.productdetails{
+.productdetails,.productList{
   position: relative;
   top:4rem;
   
@@ -28,11 +27,26 @@ padding: 0.8em;
 cursor: pointer;
 }
 
+.search{
+  background-color: burlywood;
+  top: 4rem;
+  left:38%;
+  padding: 10px;
+  height: 12rem;
+  width: 30rem;
+  white-space: nowrap;
+  overflow: auto;
+}
+.hide{
+  display: none;
+}
 .navbar {
   z-index: 1;
   height: 4rem;
 }
-
+.searchcard{
+  min-height: 5rem;
+}
 .item{
  height: auto;
   background-color: aquamarine;
