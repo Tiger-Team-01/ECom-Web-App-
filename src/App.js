@@ -19,9 +19,9 @@ function App() {
 
   useEffect(() =>
 
-    dispatch(GetProduct(20))
-
-    , [dispatch]);
+    dispatch(GetProduct())
+    // eslint-disable-next-line
+    , []);
 
 
   return (

@@ -6,7 +6,7 @@ function NavBar({setDrawer}) {
           <div className="nav navbar-nav container-fluid d-flex justify-content-between p-2 ms-5 me-5">
               
                  <Link to="/" style={{color:"white",textDecoration:"none"}}><h3 >React Cart App</h3></Link>
-              
+                  <input placeholder="Search " className="p-2"></input>
                   <button className="bg-transparent border border-0" onClick={()=>{
                     setDrawer(true)
                   }}>

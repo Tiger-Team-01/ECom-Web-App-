@@ -30,7 +30,7 @@ function Payments({ cartItems }) {
               className="p-3 m-3 bg-info d-flex flex-row position-relative"
             >
               <img
-                src={item.image}
+                src={item.Images? item.Images[0].url:null}
                 style={{ width: "5rem", height: "5rem" }}
                 alt=""
               />

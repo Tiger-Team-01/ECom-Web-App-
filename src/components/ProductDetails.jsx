@@ -14,19 +14,19 @@ function ProductDetails({ setDrawer }) {
     <div className="container d-flex justify-content-center productdetails ">
       <Link to="/"><button className="close border border-0 bg-transparent" >back</button></Link>
       <div
-        className="card border border-2 p-3 m-2 overflow-hidden item"
-        style={{ width: "25rem", height: "stretch" }}
+        className="card border border-2 p-3 m-2 item"
+        style={{ width: "25rem" }}
       >
         <img
           style={{ width: "22rem", height: "15rem" }}
           className="card-img-top"
-          src={item.image}
+          src={item.Images? item.Images[0].url:null}
           alt=""
         />
         <div className="card-body" style={{ width: "22rem", height: "30rem" }}>
           <h4 className="card-title">{item.title}</h4>
           <p className="card-text">{item.description}</p>
-          <h3>Price: ₹{item.price * 70}</h3>
+          <h3>Price: ₹{item.price}</h3>
           <br />
 
           <input

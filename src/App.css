@@ -1,5 +1,4 @@
 .List{
-  
   padding: auto;
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -11,10 +10,9 @@
 .productdetails{
   position: relative;
   top:4rem;
-
+  
 }
 .payment{
-  height: 100rem;
   width: 100%;
   position: relative;
   top:4rem;
@@ -33,4 +31,9 @@ cursor: pointer;
 .navbar {
   z-index: 1;
   height: 4rem;
+}
+
+.item{
+ height: auto;
+  background-color: aquamarine;
 }

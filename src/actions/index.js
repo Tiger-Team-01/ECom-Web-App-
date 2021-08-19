@@ -1,12 +1,12 @@
-const GetProduct = (qty) => {
+const GetProduct = () => {
     return (dispatch) => {
         fetch(
-            `https://fakestoreapi.com/products?limit=${qty}`
+            `https://v1.nocodeapi.com/amzon/airtable/qGouPJqjfPfAVYrw?tableName=products`
         ).then(res => res.json())
             .then(data => {
                 dispatch({
                     type: "GET_PRODUCTS",
-                    payload: data,
+                    payload: data.records,
                 })
             })
 
@@ -15,12 +15,12 @@ const GetProduct = (qty) => {
 const GetProductDetails = (id) => {
 
     return (dispatch) => {
-        fetch(`https://fakestoreapi.com/products/${id}`)
+        fetch(`https://v1.nocodeapi.com/amzon/airtable/qGouPJqjfPfAVYrw?tableName=products&id=${id}`)
             .then(res => res.json())
             .then(datas => {
                 dispatch({
                     type: "GET_PRODUCT_DETAILS",
-                    payload: datas
+                    payload: datas.fields
                 })
             })
 
