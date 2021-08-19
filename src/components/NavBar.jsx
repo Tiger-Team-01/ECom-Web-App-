@@ -30,7 +30,7 @@ function NavBar({ setDrawer }) {
           id="result"
           >
           <div className="card-title">
-          {sResults}
+          {sResults?<>{sResults}</>:<h1>loading...</h1>}
             </div>
         </div>
         // )
@@ -44,7 +44,8 @@ function NavBar({ setDrawer }) {
         <input
           placeholder="Search "
           className="p-2"
-          onClick={()=>setsearch(true)}
+          onBlur={()=>setsearch(false)}
+          onFocus={()=>setsearch(true)}
           onChange={(e) => {
             searchItems.forEach((Sitems) => {
               if (Sitems.toLowerCase().includes(e.target.value.toLowerCase())) {
