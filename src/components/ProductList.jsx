@@ -8,7 +8,7 @@ function ProductList() {
   const dispatch = useDispatch();
   return (
     <div className="productList">
-      {console.log(products)}
+     
       <div className="List">
         {products.map((item, index) => (
           <Link

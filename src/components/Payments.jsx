@@ -8,17 +8,6 @@ import { ClearCart } from "../actions";
 function Payments({ cartItems }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-
-  // const [amount, setamount] = React.useState(0)
-
-  // useEffect(() => {
-
-  //     cartItems.forEach(item =>
-  //         setamount(amount+(item.price*70))
-  //         );
-  //         console.log(amount);
-  // }, [])
-
   return (
     <>
       <div className=" container d-flex flex-column align-items-center payment p-3">
@@ -30,13 +19,13 @@ function Payments({ cartItems }) {
               className="p-3 m-3 bg-info d-flex flex-row position-relative"
             >
               <img
-                src={item.Images? item.Images[0].url:null}
+                src={item.item.Images? item.item.Images[0].url:null}
                 style={{ width: "5rem", height: "5rem" }}
                 alt=""
               />
               <div className="px-3 d-flex flex-column">
-                <h5>{item.title}</h5>
-                <p>₹{item.price * 70}</p>
+                <h5>{item.item.title}</h5>
+                <p>₹{item.item.price*parseInt(item.val)}</p>
               </div>
 
               <button
@@ -50,7 +39,7 @@ function Payments({ cartItems }) {
         ) : (
           <Redirect to="/"></Redirect>
         )}
-        {/* <p className="text-white">Amount {amount}₹</p> */}
+        
         <Button
           onClick={() => {
             setShow(true);

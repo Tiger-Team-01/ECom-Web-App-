@@ -21,13 +21,14 @@ function Cart({ drawer, setdrawer }) {
               className="p-3 m-3 bg-info d-flex flex-row position-relative"
             >
               <img
-                src={item.Images? item.Images[0].url:null}
+                src={item.item.Images? item.item.Images[0].url:null}
                 style={{ width: "5rem", height: "5rem" }}
                 alt=""
               />
               <div className="px-3 d-flex flex-column">
-                <h5>{item.title}</h5>
-                <p>₹{item.price * 70}</p>
+                <h5>{item.item.title}</h5>
+                <p>₹{item.item.price}</p>
+                <p>Quantity: {item.val}</p>
               </div>
               <button
                 className="p-3 position-absolute bg-transparent border border-0 top-0 end-0"

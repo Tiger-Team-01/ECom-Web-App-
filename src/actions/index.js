@@ -28,10 +28,10 @@ const GetProductDetails = (id) => {
     }
 }
 
-const AddtoCart = (item) => {
+const AddtoCart = (item,val) => {
     return {
         type: "ADDTO_CART",
-        payload: item,
+        payload: {item,val}
     }
 }
 

@@ -47,7 +47,7 @@ function ProductDetails({ setDrawer }) {
           <Button
             variant="dark"
             onClick={() => {
-              dispatch(AddtoCart(item));
+              dispatch(AddtoCart(item,val));
 
               setDrawer(true);
             }}
