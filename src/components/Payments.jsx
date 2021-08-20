@@ -25,7 +25,7 @@ function Payments({ cartItems }) {
               />
               <div className="px-3 d-flex flex-column">
                 <h5>{item.item.title}</h5>
-                <p>₹{item.item.price*parseInt(item.val)}</p>
+                <p>₹{item.item.price*parseInt(item.qty)}</p>
               </div>
 
               <button

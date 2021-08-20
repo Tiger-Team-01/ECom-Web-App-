@@ -2,7 +2,7 @@ const GetProduct = () => {
     return (dispatch) => {
         fetch(
             
-           `https://v1.nocodeapi.com/viren76/airtable/qdxTfLGKKKPvFBkB?tableName=products`
+           `https://v1.nocodeapi.com/mysteryman/airtable/KRKHncNqtcKsbsBM?tableName=products`
         ).then(res => res.json())
             .then(data => {
                 dispatch({
@@ -16,7 +16,7 @@ const GetProduct = () => {
 const GetProductDetails = (id) => {
 
     return (dispatch) => {
-        fetch(`https://v1.nocodeapi.com/viren76/airtable/qdxTfLGKKKPvFBkB?tableName=products&id=${id}`)
+        fetch(`https://v1.nocodeapi.com/mysteryman/airtable/KRKHncNqtcKsbsBM?tableName=products&id=${id}`)
             .then(res => res.json())
             .then(datas => {
                 dispatch({
@@ -28,10 +28,10 @@ const GetProductDetails = (id) => {
     }
 }
 
-const AddtoCart = (item,val) => {
+const AddtoCart = (item,qty) => {
     return {
         type: "ADDTO_CART",
-        payload: {item,val}
+        payload: {item,qty}
     }
 }
 
@@ -47,4 +47,7 @@ const ClearCart=()=>{
         type:"CLEAR_CART"
     }
 }
+
+
+ 
 export { GetProductDetails, GetProduct, AddtoCart, RemovefromCart,ClearCart }

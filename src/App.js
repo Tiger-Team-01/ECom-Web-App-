@@ -43,7 +43,7 @@ function App() {
         }
       </Route>
 
-      <Route path="/details/:id" ><ProductDetails setDrawer={setdrawer} /></Route>
+      <Route path="/details" ><ProductDetails setDrawer={setdrawer} /></Route>
       <Route path="/payment" exact ><Payments cartItems={CartItems} /></Route>
 
     </div>

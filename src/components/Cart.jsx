@@ -28,7 +28,7 @@ function Cart({ drawer, setdrawer }) {
               <div className="px-3 d-flex flex-column">
                 <h5>{item.item.title}</h5>
                 <p>₹{item.item.price}</p>
-                <p>Quantity: {item.val}</p>
+                <p>Quantity: {item.qty}</p>
               </div>
               <button
                 className="p-3 position-absolute bg-transparent border border-0 top-0 end-0"
