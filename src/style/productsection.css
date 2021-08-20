@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap");
+
+.product-section {
+	padding-top: 50px;
+	font-family: "Open Sans", sans-serif;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 30px;
+}
+.product-section > span {
+	font-size: 24px;
+	font-weight: 500;
+	font-size: 28px;
+	margin-bottom: 20px;
+	color: rgb(114, 117, 119);
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+.product-tab {
+	justify-content: center;
+	display: flex;
+	flex-direction: row-reverse;
+	
+	padding: 0 15px;
+	width: fit-content;
+}
+
+.product {
+	display: flex;
+	flex-direction: column;
+	/* flex-wrap: nowrap; */
+	width: 880px;
+}
+
+.product .nav {
+	height: 50px;
+	display: flex;
+	align-items: center;
+}
+.product .nav h2 {
+	font-family: "Open Sans";
+	padding-left: 10px;
+	margin: 0;
+	font-size: 1.3rem;
+	font-weight: 700;
+	position: relative;
+	z-index: 1;
+}
+
+.product .products {
+	background-color: white;
+	max-height: 360px;
+	/* padding: 0 15px; */
+	overflow-x: auto;
+	white-space: nowrap;
+	scrollbar-width: 0;
+	-ms-overflow-style: none;
+}
+.product .products::-webkit-scrollbar {
+	display: none;
+	width: 0 !important;
+	background-color: transparent;
+}
+.collection img {
+	padding-left: 15px;
+}

@@ -1,0 +1,94 @@
+:root {
+	--color: #c5c5c5;
+}
+
+.logo * {
+	display: inline-block;
+}
+.logo h1 {
+	color: #d87373;
+}
+.navbar-items {
+	margin: 0;
+}
+.navbar-items > ul {
+	list-style-type: none;
+	margin: 0;
+}
+.navbar-items ul > li {
+	display: inline-block;
+	color: var(--color);
+	margin: 0 10px;
+	font-size: 1.2rem;
+}
+
+.end {
+	display: flex;
+}
+
+.search {
+	background-color: var(--color);
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-right: 5px;
+}
+
+.wishlist {
+	background-color: var(--color);
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-right: 5px;
+}
+
+.resultBox{
+  top: 4rem;
+  right: 8%;
+  height: 8rem;
+  width: 30rem;
+  overflow: hidden;
+  background-color:#888181b9;
+}
+.resultBox > input{
+	background-color: #888181b9;
+}
+.resultBox .searchcard{
+	height: 80%;
+	background-color: #888181b9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.resultBox .searchcard:hover{
+	background-color: rgb(185, 185, 185);
+}
+.hide{
+  
+	visibility: hidden;
+  }
+.cartbutton {
+	background-color: var(--color);
+	padding: 2px 15px;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cartbutton .carticon {
+	font-size: 1.5rem;
+	transform: translateY(-2px);
+}
+
+.cartbutton > span {
+	font-size: 1.1em;
+	padding-left: 2px;
+	font-weight: 500;
+}

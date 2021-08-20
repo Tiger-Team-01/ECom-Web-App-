@@ -1,8 +1,15 @@
+
+html::-webkit-scrollbar {
+	width: 0;
+}
+.App {
+	background-color: #f5f5f5;
+}
 .List{
   padding: auto;
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  background-color: aqua;
+  /* background-color: aqua; */
   padding-left: 4rem;
  
 }
@@ -26,8 +33,49 @@
 padding: 0.8em;
 cursor: pointer;
 }
+.navbar {
+  z-index: 1;
+  height: 4rem;
+}
 
-.search{
+.scale {
+	transform: scale(1);
+	transition: transform 500ms ease;
+}
+.scale:hover {
+	transform: scale(1.15);
+	transition: transform 500ms ease;
+}
+
+/* Overlay */
+
+.overlay {
+	width: 100%;
+	height: 350px;
+}
+.overlay-background {
+	width: 100%;
+	height: 100%;
+	background-image: url("https://cdn.shopify.com/s/files/1/0064/5375/6002/files/cta_1920x.jpg?v=1540383141");
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	position: relative;
+}
+
+.overlay > div::before {
+	position: absolute;
+	content: "";
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: #000;
+	opacity: 0.3;
+}
+
+/* .search{
 
   top: 4rem;
   left:38%;
@@ -37,15 +85,9 @@ cursor: pointer;
   white-space: nowrap;
   overflow: auto;
   background-color:white;
-}
-.hide{
-  
-  visibility: hidden;
-}
-.navbar {
-  z-index: 1;
-  height: 4rem;
-}
+} */
+
+
 .searchcard{
   min-height: 5rem;  
 }

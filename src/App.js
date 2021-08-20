@@ -3,12 +3,17 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import NavBar from "./components/NavBar";
-import ProductList from "./components/ProductList";
+// import ProductList from "./components/ProductList";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/Cart";
 import Payments from "./components/Payments";
 import { Route } from "react-router-dom";
 import { GetProduct } from "./actions";
+import Carousell from "./components/Carousel";
+import TopCategories from "./components/TopCategories";
+import Footer from "./components/Footer";
+import ProductSection from "./components/ProductSection";
+import Overlay from "./components/Overlay";
 
 function App() {
   const CartItems = useSelector(state => state.CartItems)
@@ -26,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-     
+
       <>
         <NavBar setDrawer={setdrawer} />
         <Cart drawer={drawer} setdrawer={setdrawer} />
@@ -35,7 +40,12 @@ function App() {
 
         {
           Products.length > 0 ?
-            <ProductList />
+          <>
+              <Carousell />
+              <TopCategories />
+              <Overlay />
+              <ProductSection products={Products} />
+            </>
             :
             <div className="d-flex justify-content-center align-items-center bg-primary" style={{ height: "100vh" }}>
               <h1>Loading...</h1>
@@ -45,7 +55,7 @@ function App() {
 
       <Route path="/details" ><ProductDetails setDrawer={setdrawer} /></Route>
       <Route path="/payment" exact ><Payments cartItems={CartItems} /></Route>
-
+      <Footer />
     </div>
   );
 }

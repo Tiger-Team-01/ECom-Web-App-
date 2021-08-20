@@ -12,6 +12,7 @@ function ProductDetails({ setDrawer }) {
   const [qty, setqty] = useState(1);
   let Add = 0;
   const dispatch = useDispatch();
+ 
 
   return (
     <div className="container d-flex justify-content-center productdetails ">
