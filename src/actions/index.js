@@ -1,22 +1,24 @@
 const GetProduct = () => {
     return (dispatch) => {
         fetch(
-            
-           `https://v1.nocodeapi.com/mysteryman/airtable/KRKHncNqtcKsbsBM?tableName=products`
+            'https://v1.nocodeapi.com/manarmy/airtable/DBJfAycEZALMjTrF?tableName=products'
+        
         ).then(res => res.json())
             .then(data => {
                 dispatch({
                     type: "GET_PRODUCTS",
-                    payload: data.records,
+                    payload: data.records
                 })
             })
 
     }
 }
+//    `https://v1.nocodeapi.com/mysteryman/airtable/KRKHncNqtcKsbsBM?tableName=products`
 const GetProductDetails = (id) => {
 
     return (dispatch) => {
-        fetch(`https://v1.nocodeapi.com/mysteryman/airtable/KRKHncNqtcKsbsBM?tableName=products&id=${id}`)
+        fetch(
+            `https://v1.nocodeapi.com/manarmy/airtable/DBJfAycEZALMjTrF?tableName=products&id=${id}`)
             .then(res => res.json())
             .then(datas => {
                 dispatch({

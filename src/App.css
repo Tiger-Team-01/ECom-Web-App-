@@ -24,15 +24,7 @@ html::-webkit-scrollbar {
   top:4rem;
 
 }
-.close{
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 100;
-  width: 2em;
-padding: 0.8em;
-cursor: pointer;
-}
+
 .navbar {
   z-index: 1;
   height: 4rem;
@@ -74,18 +66,6 @@ cursor: pointer;
 	background: #000;
 	opacity: 0.3;
 }
-
-/* .search{
-
-  top: 4rem;
-  left:38%;
-  padding: 10px;
-  height: 12rem;
-  width: 30rem;
-  white-space: nowrap;
-  overflow: auto;
-  background-color:white;
-} */
 
 
 .searchcard{
