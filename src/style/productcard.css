@@ -1,62 +1,14 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
-
-.Pcard {
-	display: inline-block;
-	margin-right: 20px;
-}
-.product-card {
-	width: 200px;
-	height: 340px;
-	font-family: "Open Sans", sans-serif;
-	display: flex;
-	flex-direction: column;
-}
-
-.product-card img {
-	object-fit: cover;
-	width: 100%;
-	height: 78%;
-}
-.content h2 {
-	font-family: "Open Sans", sans-serif;
-	font-size: 0.95rem;
-	margin: 0;
-	font-weight: 300;
-	color: black;
-}
-
-.price {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.content .price h3 {
-	font-family: "Open Sans", sans-serif;
-	font-size: 0.75rem;
-	margin: 0;
-	font-weight: 600;
-	color: black;
-}
-.content .price div {
-	font-family: "Open Sans", sans-serif;
-	font-size: 0.7rem;
-	text-decoration: line-through;
-	font-style: italic;
-	padding-left: 5px;
-}
-
-.content {
-	text-align: center;
-	margin: auto;
-	padding: 5px 0;
-} */
-
 .Pcard {
 	display: inline-block;
 	/* margin-right: 20px; */
 	padding-top: 15px;
 	margin-left: 15px;
+	min-height: 422px;
+	background: rgba(255, 255, 255);
+	border-radius: 20px;
+ box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+ border: 1px solid rgba( 255, 255, 255, 0.18 );
+
 }
 .product-card {
 	width: 200px;
@@ -71,11 +23,11 @@
 	width: 100%;
 	height: 100%;
 }
-.content h2 {
+.content > h2 {
 	font-family: "Open Sans", sans-serif;
 	font-size: 0.95rem;
-	margin: 0;
-	font-weight: 300;
+	margin: 10px 0;
+	font-weight: 500;
 	color: black;
 }
 
@@ -87,7 +39,7 @@
 
 .content .price > h3 {
 	font-family: "Open Sans", sans-serif;
-	font-size: 0.8rem;
+	font-size: 1rem;
 	margin: 0;
 	font-weight: 600;
 	color: black;

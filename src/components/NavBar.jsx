@@ -30,7 +30,6 @@ function NavBar({ setDrawer }) {
 		});
 		document.body.addEventListener("mouseover", () => {
 			setDown(false);
-			console.log("body");
 		});
 	}, []);
 
@@ -94,7 +93,7 @@ function NavBar({ setDrawer }) {
 				<NavLink to='/' style={{ textDecoration: "none" }}>
 					<div className='navbar-logo'>
 						<h1>E</h1>
-						<span>SHOP</span>
+						<span>Shop</span>
 					</div>
 				</NavLink>
 				<div className='menu-items' onClick={handleClick}>
@@ -139,10 +138,10 @@ function NavBar({ setDrawer }) {
 									e.stopPropagation();
 								}}
 							>
-								<li>Men</li>
-								<li>Woman</li>
-								<li>Appliances</li>
-								<li>Electronics</li>
+								<li><a href="#Fashion">Men</a></li>
+								<li><a href="#Kids">Kids</a></li>
+								<li><a href="#Appliances">Appliances</a></li>
+								<li><a href="#Electronics">Electronics</a></li>
 							</ul>
 						</div>
 					</li>

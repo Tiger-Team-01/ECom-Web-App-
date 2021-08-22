@@ -3,14 +3,25 @@ import { Button, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { RemovefromCart } from "../actions";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { ClearCart } from "../actions";
 function Payments({ cartItems }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
+  const [netPrice, setnetPrice] = useState(0)
+  let z=0;
+  useEffect(() => {
+    if(cartItems.length>0){
+      cartItems.forEach(element => {
+        // eslint-disable-next-line
+        z=z+(element.item.price*parseInt(element.qty))
+       setnetPrice(z)
+      });
+    }
+  }, [cartItems])
   return (
     <>
-      <div className=" container d-flex flex-column align-items-center payment p-3">
+      <div className=" d-flex flex-column align-items-center paymentPage p-3" style={{minHeight:"100vh"}}>
         {cartItems.length > 0 ? (
           cartItems.map((item, index) => (
             <div
@@ -39,7 +50,7 @@ function Payments({ cartItems }) {
         ) : (
           <Redirect to="/"></Redirect>
         )}
-        
+        <p>Final Price: ₹ {netPrice}</p>
         <Button
           onClick={() => {
             setShow(true);

@@ -14,19 +14,19 @@ const Footer = () => {
 				<div className='main d-flex flex-column align-items-center justify-content-center'>
 					<div>
 						<div className=' logo logotext p-2'>
-							<span>
+							<span style={{color:"#eb8282"}}>
 								<BiSupport />
 							</span>
 							<h5>24X7 SUPPORT</h5>
 						</div>
 						<div className='logo logotext2 p-2'>
-							<span>
+							<span style={{color:"#eb8282"}}>
 								<RiTruckLine />
 							</span>
 							<h5>FREE DELIVERY</h5>
 						</div>
 						<div className='logo logotext3 p-2'>
-							<span>
+							<span style={{color:"#eb8282"}}>
 								<IoWallet />
 							</span>
 							<h5>MONEY BACK</h5>
@@ -35,8 +35,9 @@ const Footer = () => {
 				</div>
 
 				<div className='mid'>
-					<div className='text-center '>
-						<h1 className='mt-2'>Eshop</h1>
+					<div className='navbar-logo text-center fs-4'>
+						<h1 className='mt-2'>E</h1>
+						<span className='mt-2'>Shop</span>
 					</div>
 					<div className='ott col mt-3 d-flex justify-content-around'>
 						<div className='one'>

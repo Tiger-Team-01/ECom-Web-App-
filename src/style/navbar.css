@@ -35,8 +35,8 @@
 }
 :root {
 	/* --color: #eaeaea; */
-	--color: #c5c5c5e7;
-	--bgcolor: rgba(0, 0, 0, 0.7);
+	--color: #ffffffd7;
+	--bgcolor: rgb(4, 4, 27);
 }
 .navbar-items {
 	height: 64px;
@@ -100,6 +100,7 @@
 	/* border-radius: 4px; */
 	transition: all 0.2s ease-out;
 	cursor: pointer;
+	color:var(--color);
 }
 
 .menu-items {
@@ -132,6 +133,10 @@
 	padding: 5px 0;
 	border-bottom: 1px solid #eaeaeab7;
 	display: block;
+	color: var(--color);
+}
+.dropdown > li>a{
+	color: var(--color);
 }
 .dropdown > li:nth-child(4) {
 	border-bottom: none;

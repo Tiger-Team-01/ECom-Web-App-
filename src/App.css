@@ -3,7 +3,8 @@ html::-webkit-scrollbar {
 	width: 0;
 }
 .App {
-	background-color: #f5f5f5;
+	/* background-color: #f5f5f5; */
+	background-color: rgb(4,4,27,0.9 )
 }
 .List{
   padding: auto;

@@ -23,8 +23,8 @@ const ProductCard = ({ prod }) => {
 				<div className='content'>
 					<h2 className='title'>{prod.fields.title}</h2>
 					<div className='price'>
-						<h3>Rs.{prod.fields.price}</h3>
-						<div>Rs.{prod.fields.price * parseInt(2)}</div>
+						<h3>₹ {prod.fields.price}</h3>
+						<div>₹ {prod.fields.price * parseInt(2)}</div>
 					</div>
 					<RatingStar />
 				</div>
