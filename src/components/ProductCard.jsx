@@ -1,25 +1,35 @@
 import RatingStar from "./RatingStar";
 import "../style/productcard.css";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { GetProductDetails } from "../actions";
 
-const ProductCard = ({prod}) => {
+const ProductCard = ({ prod }) => {
+	const dispatch = useDispatch();
 	return (
-		<div className='Pcard'>
+		<Link
+			to={"/details/" + prod.id}
+			className='Pcard'
+			onClick={() => {
+				dispatch(GetProductDetails(prod.id));
+				console.log("clicked");
+			}}
+		>
 			<div className='product-card'>
-				<img
-					src={prod.Images[0].url}
-					alt=''
-				/>
+				<div style={{ height: "275px" }}>
+					<img src={prod.fields.Images[0].url} alt='' />
+				</div>
 
 				<div className='content'>
-					<h2 className='title'>{prod.title}</h2>
+					<h2 className='title'>{prod.fields.title}</h2>
 					<div className='price'>
-						<h3>Rs.{prod.price}</h3>
-						<div>Rs.{prod.price*parseInt(2)}</div>
+						<h3>Rs.{prod.fields.price}</h3>
+						<div>Rs.{prod.fields.price * parseInt(2)}</div>
 					</div>
 					<RatingStar />
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
 

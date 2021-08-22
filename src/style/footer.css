@@ -1,0 +1,114 @@
+/* logo logotext d-flex align-items-center justify-content-center p-2" */
+.foot {
+	flex-direction: row;
+	background-color: rgb(4, 4, 27);
+	height: 40%;
+}
+.main {
+	flex: 35%;
+	font-size: 30px;
+	border-right: 2px solid white;
+}
+
+.logo > h5 {
+	margin-bottom: 0;
+	margin-left: 15px;
+}
+
+.mid {
+	padding: 10px;
+	flex: 65%;
+}
+.one {
+	display: flex;
+	flex-direction: column;
+}
+
+.main .logo {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+@media screen and (min-width: 565px) and (max-width: 825px) {
+	.foot {
+		flex-direction: column;
+	}
+	.main {
+		border-right: 0px;
+		border-bottom: 2px solid white;
+		flex-direction: row !important;
+		justify-content: center !important;
+	}
+	.main > div .logo {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+		text-align: center;
+	}
+	.logo > span {
+		display: block;
+		text-align: center;
+	}
+	.logo > h5 {
+		text-align: center;
+		margin-left: 0 !important;
+	}
+
+	.main > div {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+	}
+}
+
+@media screen and (min-width: 280px) and (max-width: 565px) {
+	.foot {
+		flex-direction: column;
+	}
+	.main {
+		border-right: 0px;
+		border-bottom: 2px solid white;
+		flex-direction: row !important;
+		justify-content: center !important;
+	}
+
+	.main > div {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+	}
+
+	.main > div .logo {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+		text-align: center;
+	}
+	.logo > span {
+		display: block;
+		text-align: center;
+	}
+	.logo > h5 {
+		text-align: center;
+		margin-left: 0 !important;
+	}
+	.ott {
+		flex-wrap: wrap;
+		justify-content: space-between !important;
+	}
+	.three {
+		flex-basis: 220px;
+		margin: auto;
+	}
+
+	.one,
+	.two,
+	.three > h3 {
+		text-align: center;
+	}
+}

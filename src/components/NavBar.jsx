@@ -1,179 +1,179 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import React from "react";
+import "../style/navbar.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
-import { FiShoppingCart, FiSearch } from "react-icons/fi";
-import { Nav } from "react-bootstrap";
 import { GetProductDetails } from "../actions";
-import "../style/navbar.css";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { FiSearch } from "react-icons/fi";
+import { HiShoppingCart } from "react-icons/hi";
+import { IoCloseSharp } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
 
 function NavBar({ setDrawer }) {
-  const products = useSelector((state) => state.Product);
-  const CartItems = useSelector(state => state.CartItems)
-  const [search, setsearch] = useState(false);
-  const searchItems = [];
-  const [sResults, setsResults] = useState("");
-  const dispatch = useDispatch();
+	const searchItems = [];
+	const [search, setsearch] = useState(false);
+	const [clicked, setClicked] = useState(false);
+	const [sResults, setsResults] = useState("");
+	const [down, setDown] = useState(false);
+	const products = useSelector((state) => state.Product);
+	const CartItems = useSelector((state) => state.CartItems);
+	const dispatch = useDispatch();
 
-  useEffect(() => {
-    document.body.addEventListener("click", () => {
-      setsearch(false);
-    });
-  }, []);
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-      {products.length > 0
-        ? products.forEach((item) => searchItems.push(item.fields.title))
-        : null}
-      <div
-        className={
-          search
-            ? "resultBox position-fixed p-1 d-flex flex-column "
-            : "resultBox position-fixed p-1  d-flex flex-column hide"
-        }
-      >
-        <input
-          type="text"
-          placeholder="Search "
-          className="p-1 border border-0 text-white"
-          onClick={(e) => {
-            setsearch(true);
-            e.stopPropagation();
-          }}
-          onChange={(e) => {
-            searchItems.forEach((Sitems) => {
-              if (Sitems.toLowerCase().includes(e.target.value.toLowerCase())) {
-                setsResults([Sitems]);
-              }
-            });
-          }}
-        ></input>       
-        <div
-          className="card text-left p-3 overflow-hidden searchcard"
-          id="result"
-          onClick={() => {
-            if (products.length > 0) {
-              products.forEach((ele) => {
-                // eslint-disable-next-line
-                if (ele.fields.title == sResults) {
-                  dispatch(GetProductDetails(ele.id));
-                  setsearch(false);
-                }
-              });
-            }
-          }}
-        >
-          <Link to="/details" className="text-white text-decoration-none">
-            {sResults ? <>{sResults}</> : <h6>Loading...</h6>}
-          </Link>
-        </div>
-      </div>
-      <a
-        className="navbar-brand  me-0 ms-2 order-2 order-lg-1  site-header__logo-image"
-        href="/"
-      >
-        Eshop
-      </a>
-      <button
-        className="navbar-toggler collapsed"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
+	const handleClick = () => {
+		setClicked(!clicked);
+	};
 
-      <div
-        className="navbar-collapse order-1 order-lg-2 collapse"
-        id="navbarSupportedContent"
-      >
-        <ul className="navbar-nav mx-auto">
-          <li className="nav-item">
-            <a className="nav-link" href="/">
-              Home
-            </a>
-          </li>
+	useEffect(() => {
+		document.body.addEventListener("click", () => {
+			setsearch(false);
+			setDown(false);
+		});
+		document.body.addEventListener("mouseover", () => {
+			setDown(false);
+			console.log("body");
+		});
+	}, []);
 
-          <li className="nav-item">
-            <a className="nav-link" href="#Fashion">
-              Shop
-            </a>
-          </li>
+	return (
+		<>
+			<div className='navbar-items'>
+				{products.length > 0
+					? products.forEach((item) => searchItems.push(item.fields.title))
+					: null}
+				<div
+					style={{ zIndex: 5 }}
+					className={
+						search
+							? "resultBox position-fixed p-1 d-flex flex-column "
+							: "resultBox position-fixed p-1  d-flex flex-column hide"
+					}
+				>
+					<input
+						type='text'
+						placeholder='Search '
+						className='p-1 border border-0 text-white'
+						onClick={(e) => {
+							setsearch(true);
+							e.stopPropagation();
+						}}
+						onChange={(e) => {
+							searchItems.forEach((Sitems) => {
+								if (
+									Sitems.toLowerCase().includes(
+										e.target.value.toLowerCase(),
+									)
+								) {
+									setsResults([Sitems]);
+								}
+							});
+						}}
+					></input>
+					<div
+						className='card text-left p-3 overflow-hidden searchcard'
+						id='result'
+						onClick={() => {
+							if (products.length > 0) {
+								products.forEach((ele) => {
+									// eslint-disable-next-line
+									if (ele.fields.title == sResults) {
+										dispatch(GetProductDetails(ele.id));
+										setsearch(false);
+									}
+								});
+							}
+						}}
+					>
+						<Link
+							to='/details'
+							className='text-white text-decoration-none'
+						>
+							{sResults ? <>{sResults}</> : <h6>Loading...</h6>}
+						</Link>
+					</div>
+				</div>
+				<NavLink to='/' style={{ textDecoration: "none" }}>
+					<div className='navbar-logo'>
+						<h1>E</h1>
+						<span>SHOP</span>
+					</div>
+				</NavLink>
+				<div className='menu-items' onClick={handleClick}>
+					{clicked ? <IoCloseSharp /> : <GiHamburgerMenu />}
+				</div>
+				<ul className={clicked ? "nav-menu activate" : "nav-menu"}>
+					<li>
+						<NavLink className='nav-links' to='/'>
+							Home
+						</NavLink>
+					</li>
+					<li>
+						<div className='nav-links'>Shop</div>
+					</li>
+					<li>
+						<div className='nav-links'>About</div>
+					</li>
+					<li
+						onMouseOver={(e) => {
+							setDown(true);
+							console.log(down);
+							e.stopPropagation();
+						}}
+						onTouchStart={(e) => {
+							setDown(true);
+							console.log(down);
+							e.stopPropagation();
+						}}
+					>
+						<div className='nav-links drop-down'>
+							Categories
+							<ul
+								className={down ? "dropdown active" : "dropdown "}
+								onMouseOver={(e) => {
+									setDown(true);
+									console.log(down);
+									e.stopPropagation();
+								}}
+								onTouchStart={(e) => {
+									setDown(true);
+									console.log(down);
+									e.stopPropagation();
+								}}
+							>
+								<li>Men</li>
+								<li>Woman</li>
+								<li>Appliances</li>
+								<li>Electronics</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<div className='end'>
+					<div
+						className='search'
+						onClick={(e) => {
+							setsearch(!search);
+							e.stopPropagation();
+						}}
+					>
+						{search ? <IoCloseSharp /> : <FiSearch />}
+					</div>
 
-          <li className="nav-item">
-            <a className="nav-link" href="/pages/about-us">
-              About
-            </a>
-          </li>
-
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="/"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Categories
-            </a>
-            <div className="dropdown-menu">
-              <a className="dropdown-item" href="#Fashion">
-                Shop
-              </a>
-
-              <a className="dropdown-item" href="/pages/about-us">
-                About Us
-              </a>
-
-              <a className="dropdown-item" href="/pages/contact-us">
-                Contact Us
-              </a>
-
-              <a className="dropdown-item" href="/blogs/news">
-                News
-              </a>
-
-              <a className="dropdown-item" href="/pages/faqs">
-                FAQs
-              </a>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div className="order-3 navbar-right-elements">
-        <Nav className="flex-row">
-          <div href="#deets">
-            <div className="search">
-              <FiSearch
-                onClick={(e) => {
-                  setsearch(true);
-                  e.stopPropagation();
-                }}
-              />
-            </div>
-          </div>
-          <div href="#deets">
-            <button
-              className=" border border-0 cartbutton"
-              onClick={() => {
-                setDrawer(true);
-              }}
-            >
-              <div className="carticon">
-                <FiShoppingCart />
-              </div>
-              <span>CART {CartItems.length}</span>
-            </button>
-          </div>
-        </Nav>
-      </div>
-    </nav>
-  );
+					<button
+						className='cartbutton'
+						onClick={() => {
+							setDrawer(true);
+						}}
+					>
+						<div className='carticon'>
+							<HiShoppingCart />
+						</div>
+						<span>CART</span>
+						<span>{CartItems.length}</span>
+					</button>
+				</div>
+			</div>
+		</>
+	);
 }
 
 export default NavBar;
