@@ -3,16 +3,16 @@ import "../style/productcard.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { GetProductDetails } from "../actions";
-
 const ProductCard = ({ prod }) => {
 	const dispatch = useDispatch();
+	
 	return (
 		<Link
 			to={"/details/" + prod.id}
 			className='Pcard'
 			onClick={() => {
+				localStorage.removeItem("ProductDetails")
 				dispatch(GetProductDetails(prod.id));
-				console.log("clicked");
 			}}
 		>
 			<div className='product-card'>

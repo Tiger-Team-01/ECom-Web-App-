@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
-import { AddtoCart } from "../actions";
+import { useState,useEffect } from "react";
+import { AddtoCart, GetProductDetails } from "../actions";
 import { Link } from "react-router-dom";
 import { RemovefromCart } from "../actions";
 import RatingStar from "./RatingStar";
@@ -14,6 +14,13 @@ function ProductDetails({ setDrawer }) {
   const [qty, setqty] = useState(1);
   let Add = 0;
   const dispatch = useDispatch();
+  var ProductDetailsLocal= JSON.parse(localStorage.getItem("ProductDetails"))
+	useEffect(() => {
+		if (ProductDetailsLocal) {
+      dispatch(GetProductDetails(ProductDetailsLocal.id))
+		  }
+    // eslint-disable-next-line
+	}, [])
 
   return (
     <div className="container prodDetailsPage d-flex mt-5 mb-5" style={{height:"80vh"}}>

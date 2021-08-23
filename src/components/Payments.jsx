@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom";
 import { RemovefromCart } from "../actions";
 import { useState,useEffect } from "react";
 import { ClearCart } from "../actions";
+import '../style/payment.css'
 function Payments({ cartItems }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
@@ -21,13 +22,13 @@ function Payments({ cartItems }) {
   }, [cartItems])
   return (
     <>
-      <div className=" d-flex flex-column align-items-center paymentPage p-3" style={{minHeight:"100vh"}}>
+      <div className=" d-flex flex-column align-items-center p-1" style={{minHeight:"100vh"}}>
         {cartItems.length > 0 ? (
           cartItems.map((item, index) => (
             <div
               key={index}
-              style={{ width: "50rem", height: "8rem" }}
-              className="p-3 m-3 bg-info d-flex flex-row position-relative"
+              style={{ width: "60%", height: "8rem" }}
+              className="p-3 m-3 d-flex flex-row position-relative paymentPage"
             >
               <img
                 src={item.item.Images? item.item.Images[0].url:null}
@@ -35,8 +36,8 @@ function Payments({ cartItems }) {
                 alt=""
               />
               <div className="px-3 d-flex flex-column">
-                <h5>{item.item.title}</h5>
-                <p>₹{item.item.price*parseInt(item.qty)}</p>
+                <h5 className="fw-bold">{item.item.title}</h5>
+               <em><p>₹{item.item.price*parseInt(item.qty)}</p></em>
               </div>
 
               <button
@@ -50,32 +51,41 @@ function Payments({ cartItems }) {
         ) : (
           <Redirect to="/"></Redirect>
         )}
-        <p>Final Price: ₹ {netPrice}</p>
-        <Button
+        <div className="d-flex flex-column p-3 text-center FinalPaymentButton mt-5">
+          <h4 className="fw-bold" style={{height:"2rem"}}>Total Price: ₹ {netPrice}</h4> 
+          <p>{netPrice>1000?"Wohoo!! Your items are Eligible for free delivery" :" Sorry! Your items are not Eligible for free delivery"}</p>
+        <Button className="m-2"
           onClick={() => {
             setShow(true);
           }}
         >
           Complete Payment
         </Button>
+        </div>
         <Modal
           show={show}
           fullscreen={"md-down"}
           onHide={() => {
             setShow(false);
+            localStorage.clear();
             dispatch(ClearCart());
           }}
         >
-          <Modal.Header style={{ backgroundColor: "gray" }} closeButton>
-            <Modal.Title>Congrats</Modal.Title>
+          <Modal.Header closeButton>
+            <Modal.Title className="fw-bold">Congrats!</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            Payement Successfull
+          <Modal.Body className="text-center text-success d-flex justify-content-around align-items-center">
             <img
               style={{ display: "inline-block", width: "5rem", height: "5rem" }}
               src="https://thumbs.dreamstime.com/b/green-check-mark-icon-design-vector-badge-warranty-accept-quality-approved-yes-done-162645945.jpg"
               alt=""
-            />
+              />
+              Payement Successfull
+              <img
+              style={{ display: "inline-block", width: "5rem", height: "5rem" }}
+              src=" https://c.tenor.com/wyM-4wb4XUQAAAAM/winni-the-pooh-congrats.gif"
+              alt=""
+              /> 
           </Modal.Body>
         </Modal>
       </div>

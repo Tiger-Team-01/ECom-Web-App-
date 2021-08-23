@@ -75,6 +75,7 @@ function NavBar({ setDrawer }) {
 								products.forEach((ele) => {
 									// eslint-disable-next-line
 									if (ele.fields.title == sResults) {
+										localStorage.removeItem("ProductDetails")
 										dispatch(GetProductDetails(ele.id));
 										setsearch(false);
 									}
@@ -114,12 +115,10 @@ function NavBar({ setDrawer }) {
 					<li
 						onMouseOver={(e) => {
 							setDown(true);
-							console.log(down);
 							e.stopPropagation();
 						}}
 						onTouchStart={(e) => {
 							setDown(true);
-							console.log(down);
 							e.stopPropagation();
 						}}
 					>
@@ -129,12 +128,10 @@ function NavBar({ setDrawer }) {
 								className={down ? "dropdown active" : "dropdown "}
 								onMouseOver={(e) => {
 									setDown(true);
-									console.log(down);
 									e.stopPropagation();
 								}}
 								onTouchStart={(e) => {
 									setDown(true);
-									console.log(down);
 									e.stopPropagation();
 								}}
 							>

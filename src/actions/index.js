@@ -1,7 +1,7 @@
 const GetProduct = () => {
 	return (dispatch) => {
 		fetch(
-			"https://v1.nocodeapi.com/name/airtable/yMQkQDczBBItwLlY?tableName=products",
+			"https://v1.nocodeapi.com/cypher/airtable/HuFvqOPPuFVLKbfc?tableName=products",
 		)
 			.then((res) => res.json())
 			.then((data) => {
@@ -16,10 +16,11 @@ const GetProduct = () => {
 const GetProductDetails = (id) => {
 	return (dispatch) => {
 		fetch(
-			`https://v1.nocodeapi.com/name/airtable/yMQkQDczBBItwLlY?tableName=products&id=${id}`,
+			`https://v1.nocodeapi.com/cypher/airtable/HuFvqOPPuFVLKbfc?tableName=products&id=${id}`,
 		)
 			.then((res) => res.json())
 			.then((datas) => {
+				localStorage.setItem("ProductDetails",JSON.stringify(datas))
 				dispatch({
 					type: "GET_PRODUCT_DETAILS",
 					payload: datas.fields,

@@ -21,12 +21,10 @@ function App() {
 	const [drawer, setdrawer] = useState(false);
 
 	const dispatch = useDispatch();
-
 	useEffect(
-		() => dispatch(GetProduct()),
+		() =>dispatch(GetProduct())
 		// eslint-disable-next-line
-		[],
-	);
+	, []);
 
 	return (
 		<div className='App'>
