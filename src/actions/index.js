@@ -1,7 +1,7 @@
 const GetProduct = () => {
 	return (dispatch) => {
 		fetch(
-			"https://v1.nocodeapi.com/cypher/airtable/HuFvqOPPuFVLKbfc?tableName=products",
+			"https://v1.nocodeapi.com/cypher2/airtable/DmuBXQfecgcjrTNa?tableName=products",
 		)
 			.then((res) => res.json())
 			.then((data) => {
