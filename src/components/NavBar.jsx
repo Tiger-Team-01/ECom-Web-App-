@@ -107,7 +107,8 @@ function NavBar({ setDrawer }) {
 						</NavLink>
 					</li>
 					<li>
-						<div className='nav-links'>Shop</div>
+						<div className='nav-links'>
+							<a href="#topcategory" style={{color:"white"}}>Shop</a></div>
 					</li>
 					<li>
 						<div className='nav-links'>About</div>
@@ -139,6 +140,7 @@ function NavBar({ setDrawer }) {
 								<li><a href="#Kids">Kids</a></li>
 								<li><a href="#Appliances">Appliances</a></li>
 								<li><a href="#Electronics">Electronics</a></li>
+								<li><a href="#Mobile">Mobiles</a></li>
 							</ul>
 						</div>
 					</li>

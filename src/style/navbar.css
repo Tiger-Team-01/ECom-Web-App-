@@ -138,7 +138,7 @@
 .dropdown > li>a{
 	color: var(--color);
 }
-.dropdown > li:nth-child(4) {
+.dropdown > li:nth-child(5) {
 	border-bottom: none;
 }
 .active {

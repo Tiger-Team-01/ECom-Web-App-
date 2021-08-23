@@ -19,7 +19,7 @@ const bt = {
 const TopCategories = () => {
 	return (
 		<>
-			<div className='top-category'>
+			<div className='top-category' id='topcategory'>
 				<span>Top Categories</span>
 
 				<CardGroup>

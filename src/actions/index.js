@@ -12,7 +12,7 @@ const GetProduct = () => {
 			});
 	};
 };
-//    `https://v1.nocodeapi.com/oneman/airtable/mWCBUcUIFvfQWAsC?tableName=products`
+
 const GetProductDetails = (id) => {
 	return (dispatch) => {
 		fetch(
