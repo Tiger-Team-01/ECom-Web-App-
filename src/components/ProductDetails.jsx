@@ -1,10 +1,11 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { useState,useEffect } from "react";
-import { AddtoCart, GetProductDetails } from "../actions";
+import { useState } from "react";
+import { AddtoCart,GetProductDetails } from "../actions";
 import { Link } from "react-router-dom";
 import { RemovefromCart } from "../actions";
+import {useEffect} from "react";
 import RatingStar from "./RatingStar";
 import "../style/productDetails.css";
 
@@ -15,15 +16,15 @@ function ProductDetails({ setDrawer }) {
   let Add = 0;
   const dispatch = useDispatch();
   var ProductDetailsLocal= JSON.parse(localStorage.getItem("ProductDetails"))
-	useEffect(() => {
-		if (ProductDetailsLocal) {
+    useEffect(() => {
+        if (ProductDetailsLocal) {
       dispatch(GetProductDetails(ProductDetailsLocal.id))
-		  }
+          }
     // eslint-disable-next-line
-	}, [])
+    }, [])
 
   return (
-    <div className="container prodDetailsPage d-flex mt-5 mb-5" style={{height:"80vh"}}>
+    <div className="container prodDetailsPage d-flex mt-5 mb-5" style={{height:"80vh",color:"white"}}>
       <Link to="/">
         <button className="back bg-transparent border border-0">
           <img
@@ -61,7 +62,7 @@ function ProductDetails({ setDrawer }) {
           <div className="pr">Price : ₹{item.price}</div>
           <div className="buy">
             <Button
-              variant="dark"
+              variant="primary"
               onClick={() => {
                 if (CartItems.length > 0) {
                   CartItems.forEach((element, index) => {
@@ -75,6 +76,7 @@ function ProductDetails({ setDrawer }) {
                       Add = 1;
                       dispatch(RemovefromCart(index));
                       dispatch(AddtoCart(item, qty));
+                      
                     }
                   });
                 }
