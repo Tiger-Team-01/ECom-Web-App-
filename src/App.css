@@ -1,34 +1,31 @@
-
 html::-webkit-scrollbar {
 	width: 0;
 }
 .App {
-	background-color: #f5f5f5;
-	/* background-color: rgb(4,4,27,0.9 ) */
+	/* background-color: #f5f5f5; */
+	background-color: rgb(4, 4, 27, 0.9);
 }
-.List{
-  padding: auto;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  /* background-color: aqua; */
-  padding-left: 4rem;
- 
+.List {
+	padding: auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	/* background-color: aqua; */
+	padding-left: 4rem;
 }
-.productdetails,.productList{
-  position: relative;
-  top:4rem;
-  
+.productdetails,
+.productList {
+	position: relative;
+	top: 4rem;
 }
-.payment{
-  width: 100%;
-  position: relative;
-  top:4rem;
-
+.payment {
+	width: 100%;
+	position: relative;
+	top: 4rem;
 }
 
 .navbar {
-  z-index: 1;
-  height: 4rem;
+	z-index: 1;
+	height: 4rem;
 }
 
 .scale {
@@ -68,11 +65,10 @@ html::-webkit-scrollbar {
 	opacity: 0.3;
 }
 
-
-.searchcard{
-  min-height: 5rem;  
+.searchcard {
+	min-height: 5rem;
 }
-.item{
- height: auto;
-  background-color: aquamarine;
+.item {
+	height: auto;
+	background-color: aquamarine;
 }

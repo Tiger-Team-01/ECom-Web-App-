@@ -75,7 +75,7 @@ function NavBar({ setDrawer }) {
 								products.forEach((ele) => {
 									// eslint-disable-next-line
 									if (ele.fields.title == sResults) {
-										localStorage.removeItem("ProductDetails")
+										localStorage.removeItem("ProductDetails");
 										dispatch(GetProductDetails(ele.id));
 										setsearch(false);
 									}
@@ -108,7 +108,10 @@ function NavBar({ setDrawer }) {
 					</li>
 					<li>
 						<div className='nav-links'>
-							<a href="#topcategory" style={{color:"white"}}>Shop</a></div>
+							<a href='#topcategory' style={{ color: "inherit" }}>
+								Shop
+							</a>
+						</div>
 					</li>
 					<li>
 						<div className='nav-links'>About</div>
@@ -136,11 +139,21 @@ function NavBar({ setDrawer }) {
 									e.stopPropagation();
 								}}
 							>
-								<li><a href="#Fashion">Men</a></li>
-								<li><a href="#Kids">Kids</a></li>
-								<li><a href="#Appliances">Appliances</a></li>
-								<li><a href="#Electronics">Electronics</a></li>
-								<li><a href="#Mobile">Mobiles</a></li>
+								<li>
+									<a href='#Fashion'>Men</a>
+								</li>
+								<li>
+									<a href='#Kids'>Kids</a>
+								</li>
+								<li>
+									<a href='#Appliances'>Appliances</a>
+								</li>
+								<li>
+									<a href='#Electronics'>Electronics</a>
+								</li>
+								<li>
+									<a href='#Mobile'>Mobiles</a>
+								</li>
 							</ul>
 						</div>
 					</li>
