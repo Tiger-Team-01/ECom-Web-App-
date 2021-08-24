@@ -71,18 +71,12 @@ function ProductDetails({ setDrawer }) {
 								if (CartItems.length > 0) {
 									CartItems.forEach((element, index) => {
 										// eslint-disable-next-line
-										if (
-											element.item.id == item.id &&
-											element.qty == qty
-										) {
+										if (element.item.id == item.id && element.qty == qty) {
 											Add = 1;
 											setDrawer(true);
 										}
 										// eslint-disable-next-line
-										if (
-											element.qty != qty &&
-											element.item.id == item.id
-										) {
+										if (element.qty != qty && element.item.id == item.id) {
 											Add = 1;
 											dispatch(RemovefromCart(index));
 											dispatch(AddtoCart(item, qty));
