@@ -49,6 +49,62 @@
 	display: flex;
 	align-items: center;
 }
+
+.qty {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.inputNumber {
+	width: 90px;
+	border: 1px solid #ffffff00;
+	height: 30px;
+	border-radius: 5px;
+	position: relative;
+	user-select: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 5px;
+}
+.decrement {
+	width: 30px;
+	height: 30px;
+	border-radius: 5px 0 0 5px;
+	border: 2px solid gainsboro;
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	text-align: center;
+}
+.increment {
+	width: 30px;
+	height: 30px;
+	border: 2px solid gainsboro;
+	border-radius: 0 5px 5px 0;
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	text-align: center;
+}
+.countValue {
+	font-size: 1.4rem;
+	font-weight: 500;
+}
+
+.inputNumber > .decrement :active,
+.increment :active {
+	transform: scale(0.9);
+	color: #25df2f;
+}
+.increment,
+.decrement {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: darkgray;
+}
 @media screen and (min-width: 1096px) and (max-width: 1620px) {
 	.imageContainer {
 		height: 60vh;
@@ -66,6 +122,7 @@
 		height: 100% !important;
 		align-items: center;
 		padding: 0 !important;
+		color: white !important;
 	}
 	.imageContainer > div > img {
 		width: 300px;

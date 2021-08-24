@@ -8,6 +8,7 @@ import { RemovefromCart } from "../actions";
 import RatingStar from "./RatingStar";
 import "../style/productDetails.css";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 function ProductDetails({ setDrawer }) {
 	const item = useSelector((state) => state.Details);
@@ -23,6 +24,16 @@ function ProductDetails({ setDrawer }) {
 		// eslint-disable-next-line
 	}, []);
 
+	const handleIncrement = () => {
+		if (qty >= 1 && qty < 10) {
+			setqty(qty + 1);
+		}
+	};
+	const handleDecrement = () => {
+		if (qty > 1) {
+			setqty(qty - 1);
+		}
+	};
 	return (
 		<div
 			className='container prodDetailsPage d-flex mt-5 mb-5'
@@ -30,10 +41,6 @@ function ProductDetails({ setDrawer }) {
 		>
 			<Link to='/'>
 				<button className='back bg-transparent border border-0'>
-					{/* <img
-            src="https://image.flaticon.com/icons/png/512/93/93634.png"
-            alt=""
-          /> */}
 					<IoArrowBackCircleOutline />
 				</button>
 			</Link>
@@ -49,19 +56,15 @@ function ProductDetails({ setDrawer }) {
 				<div className=' p-2 detail2 d-flex flex-column '>
 					<div className='qty'>
 						Quantity :
-						<input
-							className='qty p-2 my-3'
-							id='qty'
-							style={{ width: "4rem", height: "2rem" }}
-							placeholder='1'
-							value={qty}
-							type='number'
-							min={1}
-							max={9}
-							onChange={(e) => {
-								setqty(e.target.value);
-							}}
-						/>
+						<div className='inputNumber'>
+							<div className='decrement' onClick={handleDecrement}>
+								<FaMinus />
+							</div>
+							<div className='countValue'>{qty}</div>
+							<div className='increment' onClick={handleIncrement}>
+								<FaPlus />
+							</div>
+						</div>
 					</div>
 					<div className='pr'>Price : ₹{item.price}</div>
 					<div className='buy'>
@@ -76,7 +79,7 @@ function ProductDetails({ setDrawer }) {
 											setDrawer(true);
 										}
 										// eslint-disable-next-line
-										if (element.qty != qty && element.item.id == item.id) {
+										if ( element.qty != qty && element.item.id == item.id) {
 											Add = 1;
 											dispatch(RemovefromCart(index));
 											dispatch(AddtoCart(item, qty));
