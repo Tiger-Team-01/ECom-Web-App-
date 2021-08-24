@@ -11,7 +11,7 @@ const Carousell = () => {
 					<img
 						style={img}
 						className='d-block w-100 '
-						src='https://previews.123rf.com/images/ylivdesign/ylivdesign1705/ylivdesign170502813/78258025-online-shopping-banner-horizontal-cartoon-style.jpg'
+						src='https://cdn.discordapp.com/attachments/866389808376184843/879437128541556747/unknown.png'
 						alt='First slide'
 					/>
 
@@ -34,7 +34,7 @@ const Carousell = () => {
 				<Carousel.Item>
 					<img
 						className='d-block w-100'
-						src='https://eduardklein.com/wp-content/uploads/ecommerce-platforms-1300x650.png'
+						src='https://cdn.discordapp.com/attachments/866389808376184843/879437561389527090/unknown.png'
 						alt='Third slide'
 					/>
 					<Carousel.Caption>

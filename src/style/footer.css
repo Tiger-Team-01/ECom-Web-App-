@@ -30,7 +30,7 @@
 	justify-content: flex-start;
 }
 
-@media screen and (min-width: 565px) and (max-width: 825px) {
+@media screen and (min-width: 565px) and (max-width: 990px) {
 	.foot {
 		flex-direction: column;
 	}
@@ -64,7 +64,7 @@
 	}
 }
 
-@media screen and (min-width: 280px) and (max-width: 565px) {
+@media screen and (min-width: 280px) and (max-width: 606px) {
 	.foot {
 		flex-direction: column;
 	}
@@ -100,15 +100,22 @@
 	.ott {
 		flex-wrap: wrap;
 		justify-content: space-between !important;
-	}
-	.three {
-		flex-basis: 220px;
-		margin: auto;
+		font-size: 0.9rem;
 	}
 
-	.one,
-	.two,
+	.ott .one,
+	.ott .two {
+		text-align: left !important;
+	}
+	.ott > .three {
+		flex-basis: 230px;
+		margin: auto;
+		text-align: center;
+	}
 	.three > h3 {
 		text-align: center;
+	}
+	.ott .three {
+		text-align: start;
 	}
 }

@@ -64,6 +64,9 @@ function NavBar({ setDrawer }) {
 								) {
 									setsResults([Sitems]);
 								}
+								if (e.target.value === "") {
+									setsResults(null);
+								}
 							});
 						}}
 					></input>
@@ -87,7 +90,7 @@ function NavBar({ setDrawer }) {
 							to='/details'
 							className='text-white text-decoration-none'
 						>
-							{sResults ? <>{sResults}</> : <h6>Loading...</h6>}
+							{sResults ? <>{sResults}</> : <h6>----</h6>}
 						</Link>
 					</div>
 				</div>
