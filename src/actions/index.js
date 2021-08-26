@@ -1,7 +1,7 @@
 const GetProduct = () => {
 	return (dispatch) => {
 		fetch(
-			"https://v1.nocodeapi.com/coderbhai/airtable/bIORwIpXcVhypdcq?tableName=products",
+			"https://v1.nocodeapi.com/virenclg/airtable/jTIIyBNwfAAPCNjn?tableName=products",
 		)
 			.then((res) => res.json())
 			.then((data) => {
@@ -16,7 +16,7 @@ const GetProduct = () => {
 const GetProductDetails = (id) => {
 	return (dispatch) => {
 		fetch(
-			`https://v1.nocodeapi.com/coderbhai/airtable/bIORwIpXcVhypdcq?tableName=products&id=${id}`,
+			`https://v1.nocodeapi.com/virenclg/airtable/jTIIyBNwfAAPCNjn?tableName=products&id=${id}`,
 		)
 			.then((res) => res.json())
 			.then((datas) => {

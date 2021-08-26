@@ -105,7 +105,7 @@
 	justify-content: center;
 	color: darkgray;
 }
-@media screen and (min-width: 1096px) and (max-width: 1620px) {
+@media screen and (min-width: 1096px) and (max-width: 2400px) {
 	.imageContainer {
 		height: 60vh;
 	}
