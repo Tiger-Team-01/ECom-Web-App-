@@ -1,70 +1,94 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# E-Commerce Web App
 
-## Available Scripts
+We have create E-Commerce [Website](https://tigerteameshop.netlify.app/) using React .
 
-In the project directory, you can run:
 
-### `npm start`
+## Run Locally
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clone the project
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+  git clone https://github.com/Tiger-Team-01/ECom-Web-App-.git
+```
 
-### `npm test`
+Go to the project directory
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+  cd my-project
+```
 
-### `npm run build`
+Install dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  npm install material-ui/core
+  npm install  react-router-dom
+  npm install react-bootstrap
+  npm install react-icons
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Start the server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+  npm  start
+```
 
-### `npm run eject`
+  
+## Demo
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Insert gif or link to demo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Pc View](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ddbqw0vvvdpp0lqsj4wr.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Screenshots
+- Mobile
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![First page](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1q8uv54vqqdjkicqbr8x.jpeg)
+![Product Section](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/qv1kvjq8aekx48mx4fdv.jpeg)
+![Cart section](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bwq799zn6719kwr82yz6.jpeg)
+![add to cart section](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0yzyz83629qbxe0d5gg0.jpeg)
+![Payment page](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rwlskbok7g9t9cmgmww3.jpeg)
+![Complete page](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/tqdr0fy13l6j01oyqjfu.jpeg)
 
-## Learn More
+- Computer
+![First page](https://cdn.discordapp.com/attachments/840255981496696855/880752364900999218/unknown.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Product Section](https://cdn.discordapp.com/attachments/840255981496696855/880752483331346432/unknown.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Cart section](https://cdn.discordapp.com/attachments/840255981496696855/880752626394886144/unknown.png)
 
-### Code Splitting
+![add to cart section](https://cdn.discordapp.com/attachments/840255981496696855/880752820524056596/unknown.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Payment page](https://cdn.discordapp.com/attachments/840255981496696855/880752970877239336/unknown.png)
 
-### Analyzing the Bundle Size
+![Complete page](https://cdn.discordapp.com/attachments/840255981496696855/880753082370240522/unknown.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Logo
+![Logo](https://cdn.discordapp.com/attachments/840255981496696855/880755177525772288/LOGO5546.png)
 
-### Making a Progressive Web App
+    
+## Contributors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [@buddhadebChhetri](https://github.com/Buddhad)
+- [@sugamagrawal](https://github.com/Sugam50)
+- [@divashgupta](https://github.com/Divxsh)
+- [@viren](https://github.com/viren76)
+- [@ridhimaaggarwal ](https://github.com/ridz0326)
+- [@aditinimbarte ](https://github.com/adinimbarte)
 
-### Advanced Configuration
+  
+## Optimizations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* It's Full Responsive Pc and Mobile.
+* We used API and  media query to  performance improvements.
+* We create cart page and search option  for improve  user accessibility.
 
-### Deployment
+  
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://bio.link/buddhadebchhetri)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://www.linkedin.com/in/buddhadebchhetri/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  
+## 🛠 Skills
+Javascript, ReactJs, Bootstrap
